@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectListCount">
+		SELECT COUNT(*) COUNT
+		FROM BOARD
+		WHERE STATUS = 'Y'
+		AND BOARD_TYPE = 1
+	</entry>
+	
+	<entry key="selectNoticeList">
+	SELECT *
+	FROM
+	(
+	SELECT ROWNUM RNUM, N.*
+	FROM
+		(
+		SELECT BOARD_NO, CATEGORY_NAME, BOARD_TITLE, CREATE_DATE
+		FROM BOARD
+		JOIN CATEGORY USING (CATEGORY_NO)
+		WHERE STATUS = 'Y'
+		AND BOARD_TYPE = 1
+		ORDER BY (CASE WHEN SUBSTR(BOARD_TITLE, 0, 4) = '[긴급]' THEN 1 ELSE 2 END), CREATE_DATE DESC, BOARD_NO DESC
+		) N
+	)
+	WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="selectNotice">
+		SELECT BOARD_NO,
+	           CATEGORY_NAME,
+	           BOARD_TITLE,
+	           BOARD_CONTENT,
+	           CREATE_DATE
+		FROM BOARD
+		JOIN CATEGORY USING (CATEGORY_NO)
+		WHERE BOARD_NO = ?
+		AND BOARD_TYPE = 1
+		AND STATUS = 'Y'
+	</entry>
+	
+	<entry key="updateNotice">
+		UPDATE BOARD
+		SET CATEGORY_NO = ?
+		   , BOARD_TITLE = ?
+		   , BOARD_CONTENT = ?
+		WHERE BOARD_TYPE = 1
+		AND BOARD_NO = ?
+		AND STATUS = 'Y'
+	</entry>
+	
+	<entry key="selectCategoryList">
+		SELECT CATEGORY_NO, CATEGORY_NAME
+		FROM CATEGORY
+		WHERE CATEGORY_NO BETWEEN 10 AND 12
+	</entry>
+	
+	<entry key="insertNotice">
+		INSERT INTO BOARD(
+		                  BOARD_NO
+		                , BOARD_WRITER
+		                , CATEGORY_NO
+		                , BOARD_TYPE
+		                , BOARD_TITLE
+		                , BOARD_CONTENT
+		                , ANSWER_STATUS
+		                )
+		VALUES(
+		                  SEQ_BNO.NEXTVAL
+		                  , 1
+		                  , ?
+		                  , 1
+		                  , ?
+		                  , ?
+		                  , NULL
+		                  )
+	</entry>
+	
+	<entry key="deleteNotice">
+		UPDATE BOARD
+		SET STATUS = 'N'
+		WHERE BOARD_TYPE = 1
+		AND BOARD_NO = ?
+	</entry>
+	
+	<entry key="selectPrevNotice">
+		SELECT MAX(BOARD_NO) PN
+		FROM BOARD
+		<![CDATA[WHERE BOARD_NO < ?
+		AND BOARD_TYPE = 1
+		AND STATUS = 'Y']]>
+	</entry>
+	
+	<entry key="selectNextNotice">
+		SELECT MIN(BOARD_NO) NN
+		FROM BOARD
+		WHERE BOARD_NO > ?
+		AND BOARD_TYPE = 1
+		AND STATUS = 'Y'
+	</entry>
+</properties>

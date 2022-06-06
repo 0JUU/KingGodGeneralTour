@@ -1,0 +1,138 @@
+#header{
+    width: 1000px;
+    height: 120px;
+    margin: auto;
+}
+#header>div{
+    float: left;
+    height: 100%;
+}
+#header_1{
+    width: 15%;
+    position: relative;
+}
+#logo{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width: 80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#header_2{
+    width: 65%;
+    position: relative;
+}
+#header_2>p{
+    margin: auto;
+    position: absolute;
+    height: 60%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 45px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-left: 15px;
+}
+#header_3{
+    width: 20%;
+    text-align: center;
+    position: relative;
+}
+#login{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#login>div> a{
+    height: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+#logout:hover{font-weight: bold;}
+#content{
+    width: 1000px;
+    height: 680px;
+    margin: auto;
+    position: relative;
+}
+#content_1{
+	float: left;
+    width: 15%;
+    height: 100%;
+    background-color: rgb(154, 222, 226);
+    border-radius: 10px;
+}
+#content_1>div{
+    height: 49px;
+    padding-top: 19px;
+}
+.userMenu, .menu{
+    background-color: rgb(154, 222, 226);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: large;
+}
+.subarea{
+    background-color: rgb(110, 178, 182);
+    width: 100%;
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.userMenu>a, .subarea a{
+    text-decoration: none;
+    color: black;
+}
+.userMenu a:hover, .menu:hover, p a:hover{font-weight: bold;}
+#content_2{
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 150px;
+    width: 820px;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+div, p, tr, td{box-sizing: border-box;}
+#content_2 p{font-size: 25px;}
+#content_2 div{margin-top: 20px;}
+#customer{height: 5%;}
+#customer>p{border-bottom: 1px solid lightgray;}
+#notice_1{height: 5%;}
+#notice_2{height: 60%;}
+#tablearea{
+	width: 100%;
+	height: 100%;
+}
+#enrollTable{
+	padding-left: 20px;
+	width: 100%;
+	height: 100%;
+}
+td{font-size: 18px;}
+#notice_3{
+    height: 9%;
+    float: right;
+}
+select,input,.text:focus{outline-color:lightgray}
+select,input{border:1px solid rgb(180, 179, 179);}
