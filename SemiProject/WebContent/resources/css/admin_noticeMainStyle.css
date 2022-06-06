@@ -107,6 +107,8 @@
 .userMenu a:hover, .menu:hover, p a:hover{
     font-weight: bold;
 }
+
+<!-- admin_noticeMainStyle -->
 #content_2{
 	float: left;
 	position: absolute;
