@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
+	<!-- 공지사항 -->
 	<entry key="selectNoticeRownum">
 		SELECT *
 		FROM
@@ -15,6 +16,7 @@
 		<![CDATA[WHERE ROWNUM <= 2]]>
 	</entry>
 	
+	<!-- QnA -->
 	<entry key="selectQnaRownum">
 		SELECT *
 		FROM(
@@ -36,6 +38,7 @@
 		<![CDATA[WHERE ROWNUM <= 2]]>
 	</entry>
 	
+	<!-- 예약회원관리 -->
 	<entry key="selectReserveUserRownum">
 		SELECT *
 		FROM
