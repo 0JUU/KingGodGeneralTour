@@ -32,50 +32,5 @@ public class AdminService {
 		close(conn);
 		return list3;
 	}
-	//예약조회 시작
-		public ArrayList<Reservation> reservationChk(int reservtionCheck) {
-			Connection conn = getConnection();
-			
-			ArrayList<Reservation> list = new AdminDao().reservationChk(conn,reservtionCheck);
 
-			close(conn);
-			
-			return list;
-		}
-		//예약조회 끝	
-
-		//예약취소 시작
-		public int deleteReservation(int bookingNo) {
-			Connection conn = getConnection();
-			
-			int result = new AdminDao().deleteReservation(conn,bookingNo);
-			
-			if(result>0) {
-				commit(conn);
-			} else {
-				rollback(conn);
-			}
-			close(conn);
-			
-			return result;
-		}
-		//예약취소 끝
-
-		//예약변경 시작
-		public int changeReservation(int bookingNo, String depCity, String flightNo,
-				String depDate, String arrivalCity, String arrivalDate) {
-			Connection conn = getConnection();
-			
-			int result = new AdminDao().changeReservation(conn,bookingNo,depCity,flightNo,depDate,arrivalCity,arrivalDate);
-			
-			if(result>0) {
-				commit(conn);
-			} else {
-				rollback(conn);
-			}
-			close(conn);
-			
-			return result;
-		}
-		//예약 변경 끝
 }
