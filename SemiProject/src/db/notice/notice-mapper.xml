@@ -42,7 +42,7 @@
 		AND STATUS = 'Y'
 	</entry>
 	
-	<!-- 공지글 수정 -->
+	<!-- 관리자 - 공지글 수정 -->
 	<entry key="updateNotice">
 		UPDATE BOARD
 		SET CATEGORY_NO = ?
@@ -60,7 +60,7 @@
 		WHERE CATEGORY_NO BETWEEN 10 AND 12
 	</entry>
 	
-	<!-- 공지글 작성 -->
+	<!-- 관리자 - 공지글 작성 -->
 	<entry key="insertNotice">
 		INSERT INTO BOARD(
 		                  BOARD_NO
@@ -82,7 +82,7 @@
 		                  )
 	</entry>
 	
-	<!-- 공지글 삭제 -->
+	<!-- 관리자 - 공지글 삭제 -->
 	<entry key="deleteNotice">
 		UPDATE BOARD
 		SET STATUS = 'N'
