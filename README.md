@@ -51,9 +51,11 @@
 <br/>
 
 ### 3. 관리자 페이지 - 메인 페이지(세계시간, 간편메뉴, 기간별 예약건수 그래프)
+
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/97891349/184546227-65001e6a-af2a-4f74-a13d-211a30737094.png">
 <br/>
 
 ### 4. 관리자 페이지 - 공지사항 등록, 수정 및 삭제
+
 ![image](https://user-images.githubusercontent.com/97891349/184546271-7b34e4af-566e-4d01-b0b9-d3d195ca16f1.png)
 <br/>
